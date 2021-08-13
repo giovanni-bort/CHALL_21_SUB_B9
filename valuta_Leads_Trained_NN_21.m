@@ -111,7 +111,7 @@ opt_QUAL=75;
     fprintf(' sum:%10.0f%10.0f%10.0f \n',sum(sum(ECG_image)));
   
     [YPred,probs] = classify(model.net,ECG_image);
-    iii=find(probs>0.04);
+    iii=find(probs>0.03);
     if(numel(iii)<1),[iitmp,iii]=max(probs);end            % max of NN
  %   if(numel(iii)<1), iii=find(out_labels>0);end            % out_label of "do"
     my_label=[];  my_label(1:numel(probs))=0;
